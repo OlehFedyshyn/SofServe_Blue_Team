@@ -7,7 +7,7 @@ while getopts "p:t:" flag; do
     esac
 done
 
-if [ $# -eq 0 ]; then
+if [ $# -neq 2 ]; then
     echo "Usage: Enter first param(-p) - path, then second param(-t) text"
 else
     if [ -z "$path" ]; then
@@ -21,6 +21,6 @@ else
         exit 1
         
     else
-        grep -R "$text" "$path"
+        grep -R -l "$text" "$path"
     fi
 fi
