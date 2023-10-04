@@ -7,7 +7,7 @@ while getopts "p:t:" flag; do
     esac
 done
 
-if [ $# -neq 2 ]; then
+if [ $# -ne 2 ]; then
     echo "Usage: Enter first param(-p) - path, then second param(-t) text"
 else
     if [ -z "$path" ]; then
