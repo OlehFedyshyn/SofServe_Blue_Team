@@ -16,7 +16,7 @@ else
     elif [ ! -e "$path" ]; then
         echo "Error: $path path does not exist"
         exit 1
-    elif [ -z "$text" ]; then``
+    elif [ -z "$text" ]; then
         echo "Error: -t text is empty"
         exit 1
         
