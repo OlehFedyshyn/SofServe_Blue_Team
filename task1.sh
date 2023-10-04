@@ -1,12 +1,14 @@
 #!/bin/bash
 
-# Provide 2 args for directory and file
+# Check if the correct number of arguments are provided
+if [ $# -ne 2 ]; then
+  echo "Expect 2 parameters but $# were given."
+  exit 1
+fi
+
+# Get 2 args
 directory="$1"
 extension="$2"
-
-# Input data
-read -p "Enter the directory: " directory
-read -p "Enter the file extension: " extension
 
 # Check if the directory exists
 if [ ! -d "$directory" ]; then
