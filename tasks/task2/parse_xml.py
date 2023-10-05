@@ -24,8 +24,12 @@ def main():
         print(f"Error: {file_path} is not a valid path.")
         sys.exit(1)
 
-    tree = ET.parse(file_path)
-    root = tree.getroot()
+    try:
+        tree = ET.parse(file_path)
+        root = tree.getroot()
+    except ET.ParseError:
+        print("Invalid xml file.")
+        sys.exit(1)
 
     find_tag(root, tag)
 
@@ -35,9 +39,10 @@ def main():
 
     for tag_element in tag_elements:
         if len(tag_element) == 0:
-            print(f"'{tag_element.tag}': '{tag_element.text}'")
+            print(f"{tag_element.text}")
         else:
-            print(f"'{tag_element.tag}': '{''.join(tag_element.itertext()).strip()}'")
+            obj = "".join(tag_element.itertext()).strip().replace("  ", "")
+            print(obj + "\n")
 
 
 if __name__ == "__main__":
