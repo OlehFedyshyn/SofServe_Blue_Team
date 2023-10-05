@@ -1,11 +1,12 @@
-<configuration>
+<configuration password="AttributePassword">
+    <password>PasswordAtFirstHierarchicalLevel</password>
     <server>
         <hostname>example.com</hostname>
         <port>8080</port>
         <username>user123</username>
         <password>secretpassword</password>
     </server>
-    
+
     <database>
         <name>mydb</name>
         <host>dbserver.example.com</host>
@@ -13,7 +14,7 @@
         <username>dbuser</username>
         <password>supersecretpassword</password>
     </database>
-    
+
     <application>
         <name>myapp</name>
         <version>1.0</version>
