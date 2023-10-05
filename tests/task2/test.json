@@ -1,0 +1,23 @@
+[
+    {
+        "_id": {"$oid":"6491db3dc103f17a1d81c3dc"},
+        "email": "abc123@gmail.com",
+        "password": "$2a$10$FAh0.2Q7pGVizXsZo1tma.xIViEBvIC4716Bv.SSBJsZ60eQBKg4S",
+        "__v": {"$numberInt":"0"}
+    },
+    {
+        "_id": {"$oid":"64bf87651bf4289cef2f9592"},
+        "email": "test1@gmail.com", 
+        "password": "$2a$10$BRBwGI0qDnvmPLfMWf5xiezpyDPP6I.BJqDrpD99FJHTgk.S55zb.",
+        "__v": {"$numberInt":"0"}
+    },
+    {
+        "_id": {"$oid":"35bf87651bk1111cef2z5658"},
+        "email": "test112314@gmail.com", 
+        "password": {
+            "value": "pswd",
+            "__v": {"$numberInt":"1"}
+        },
+        "__v": {"$numberInt":"0"}
+    }
+]
