@@ -9,14 +9,14 @@ def check_password_key_in_yaml(yaml_file, key_to_check):
             else:
                 return None
     except FileNotFoundError:
-        print(f"Error: File '{yaml_file}' not found.")
+        print(f"Error: File '{main.txt}' not found.")
         return None
     except Exception as e:
         print(f"An error occurred: {e}")
         return None
 
 if __name__ == "__main__":
-    yaml_file = "Hello my Key"
+    yaml_file = "mani.txt"
     key_to_check = "password"
 
     password_value = check_password_key_in_yaml(yaml_file, key_to_check)
