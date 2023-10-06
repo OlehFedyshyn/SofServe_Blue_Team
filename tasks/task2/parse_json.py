@@ -1,18 +1,17 @@
 import json
 import sys
-
-# Handle provided file
+import os
+   
 def isJson(given_file):
     if not given_file.endswith(".json"):
         print("Usage: File must be in .json format")
         return False
     
-    try: 
-        with open(given_file, 'r'):
-            return True
-    except (FileNotFoundError):
+    if not os.path.exists(given_file):
         print(f"File '{given_file}' not found")
         return False
+    
+    return True
 
 # Find key
 def findKey(json_data, key_to_find):
@@ -35,7 +34,7 @@ def findKey(json_data, key_to_find):
 
     return results
 
-def main():
+def main(): 
     # Check if it's 3 args provided
     if len(sys.argv) != 3:
         print("Usage: python3 task2.py <path to json file> <key>")
