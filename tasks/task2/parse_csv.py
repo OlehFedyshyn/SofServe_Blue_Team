@@ -2,16 +2,20 @@ import argparse
 import os
 import csv
 
+def print_column(csv_file, column_name):
+    with open(csv_file, newline='') as file:
+        reader = csv.DictReader(file)
+        print(f" {column_name}")
+        print("---------------------------------")
+        for row in reader:
+            print(row[column_name])
+
 def column_exists(csv_file, column_name):
     try:
         with open(csv_file, newline='') as file:
             reader = csv.DictReader(file)
 
             if column_name in reader.fieldnames:
-                print(f" {column_name}")
-                print("---------------------------------")
-                for row in reader:
-                    print(row[column_name])
                 return True
             else:
                 return False
@@ -36,6 +40,7 @@ if __name__ == "__main__":
     if not os.path.isfile(csv_file):
         print(f'Error: \'{csv_file}\' is not a valid file.')
     elif column_exists(csv_file, column_name):
+        print_column(csv_file, column_name)  # Pass the arguments here
         print("Done")
     else:
         print(f"The column '{column_name}' does not exist in the CSV file.")
