@@ -16,11 +16,24 @@ def isJson(given_file):
 
 # Find key
 def findKey(json_data, key_to_find):
-    keys_list = []
-    for item in json_data:
-        if key_to_find in item:
-            keys_list.append((key_to_find, item[key_to_find]))
-    return keys_list
+    stack = [(json_data, [])]
+    results = []
+
+    while stack:
+        current_data, current_path = stack.pop()
+
+        # Check, if currect current data is JSON object
+        if isinstance(current_data, dict):  
+            for key, value in current_data.items():
+                if key == key_to_find:
+                    results.append((current_path + [key], value))
+                # Make sure that we continue explore nested objects
+                stack.append((value, current_path + [key]))
+        elif isinstance(current_data, list):
+            for i, item in enumerate(current_data):
+                stack.append((item, current_path + [str(i)]))
+
+    return results
 
 def main():
     # Check if it's 3 args provided
@@ -48,4 +61,4 @@ def main():
         print(f"Key '{key}' not found in the JSON data.")  
 
 if __name__ == "__main__":
-    main()  
+    main()
