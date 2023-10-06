@@ -1,5 +1,6 @@
 import json
 import sys
+import os
 
 # Handle provided file
 def isJson(given_file):
@@ -7,12 +8,11 @@ def isJson(given_file):
         print("Usage: File must be in .json format")
         return False
     
-    try: 
-        with open(given_file, 'r'):
-            return True
-    except (FileNotFoundError):
-        print(f"File '{given_file}' not found")
+    if not os.path.exists(given_file):
+        print(f"File '{given_file} not found")
         return False
+    
+    return True
 
 # Find key
 def findKey(json_data, key_to_find):
