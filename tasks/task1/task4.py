@@ -13,10 +13,8 @@ def search_files(directory, search_text):
                         matching_files.append(file_path)
             except UnicodeDecodeError:
                 pass
-                # print(f"E: {file_path}: Incorrect file type!")
             except PermissionError:
                 pass
-                # print(f"E: {file_path}: Not sufficient permission!")
     return matching_files
 
 
