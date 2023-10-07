@@ -9,7 +9,19 @@
         "_id": {"$oid":"64bf87651bf4289cef2f9592"},
         "email": "test1@gmail.com", 
         "password": "$2a$10$BRBwGI0qDnvmPLfMWf5xiezpyDPP6I.BJqDrpD99FJHTgk.S55zb.",
-        "__v": {"$numberInt":"0"}
+        "__v": {"$numberInt":"0"},
+        "account": {
+            "name": "username",
+            "password": "pwd123",
+            "object": {
+                "hiddenUserName": "secretname",
+                "password": "anotherPasswordForSecretUsername",
+                "child": {
+                    "name": "username_v2",
+                    "password": "childPassword"
+                }
+            }
+        }
     },
     {
         "_id": {"$oid":"35bf87651bk1111cef2z5658"},
