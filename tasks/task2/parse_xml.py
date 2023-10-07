@@ -6,6 +6,9 @@ tag_elements = []
 
 
 def find_tag(element, tag):
+    if tag in element.attrib:
+        tag_elements.append(element.attrib[tag])
+
     tag_elements.extend(element.findall(tag))
 
     for child_element in element:
@@ -38,8 +41,10 @@ def main():
         sys.exit(1)
 
     for tag_element in tag_elements:
-        if len(tag_element) == 0:
-            print(f"{tag_element.text}")
+        if isinstance(tag_element, str):
+            print(tag_element)
+        elif len(tag_element) == 0:
+            print(tag_element.text)
         else:
             obj = "".join(tag_element.itertext()).strip().replace("  ", "")
             print(obj + "\n")
