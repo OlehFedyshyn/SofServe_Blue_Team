@@ -14,7 +14,6 @@ if [ $# -ne 2 ]; then
 	exit 1
 fi
 
-# Get user parameters
 path="$1"
 ext="$2"
 

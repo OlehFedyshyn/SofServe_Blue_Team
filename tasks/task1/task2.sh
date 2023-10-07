@@ -14,7 +14,6 @@ if [ $# -ne 2 ];then
 	exit 1
 fi
 
-# Get user parameters
 path="$1"
 text="$2"
 
@@ -28,7 +27,6 @@ Looking for the files in "$path",
 which has the following text: "$text"
 EOF
 
-# Filter files by text
 grep -l "$text"\
        	$(find $path -maxdepth 1 -type f)
 
