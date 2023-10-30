@@ -15,7 +15,6 @@ def find_files_with_text(directory, text):
                         matching_files.append(file_path)
             except Exception:
                 pass
-                # print(f"Error reading {file_path}")
 
     return matching_files
 
