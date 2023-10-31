@@ -15,7 +15,6 @@ def find_files_with_text(directory, text):
                         matching_files.append(file_path)
             except Exception:
                 pass
-                # print(f"Error reading {file_path}")
 
     return matching_files
 
@@ -35,7 +34,6 @@ def main():
     matching_files = find_files_with_text(directory, text_to_search)
 
     if matching_files:
-        print("Files containing the specified text:")
         for file in matching_files:
             print(file)
     else:
